@@ -8,6 +8,7 @@ public class CamelArtemisRouteBuilder extends RouteBuilder {
 
     public void configure() throws Exception {
 
+	System.out.println("Inside configure");
         // Send a message to a queue every 5 seconds
         from("timer:mytimer?period=50000").routeId("generate-route")
                 .transform(constant("HELLO from Camel!"))
